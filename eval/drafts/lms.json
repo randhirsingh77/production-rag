@@ -1,0 +1,177 @@
+[
+  {
+    "gold_quote": "(https://lms-seven-gold.vercel.app, auto-deploys from the `lms` repo's",
+    "question": "What is the live URL of the LMS frontend?",
+    "reference_answer": "The frontend is live at https://lms-seven-gold.vercel.app on Vercel.",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "(https://lms-m5d0.onrender.com, service \"lms\", root dir `server`,",
+    "question": "What is the URL of the LMS backend, and what is the Render service called?",
+    "reference_answer": "The backend is at https://lms-m5d0.onrender.com, and the Render service is named \"lms\".",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "a reproduction suite went from 43/67 before the fixes to\n67/67 after; a second suite passed 70/70",
+    "question": "What were the reproduction suite results before and after the access-control fixes of 2026-10-25?",
+    "reference_answer": "The reproduction suite went from 43/67 before the fixes to 67/67 after, and a second suite passed 70/70.",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "Tab title fixed from \"Vite + React\" to \"E-Learning\"; course",
+    "question": "What was the browser tab title changed to during the Round F overhaul?",
+    "reference_answer": "The tab title was fixed from \"Vite + React\" to \"E-Learning\".",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "Verification: a responsive suite passed 208/208 across 360/390/768/",
+    "question": "How many checks did the Round F responsive suite pass?",
+    "reference_answer": "The responsive suite passed 208/208 across the tested screen widths.",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "New authenticated endpoint POST /api/v1/purchase/checkout/verify-session:",
+    "question": "What is the name of the endpoint that verifies a Stripe checkout session after a buyer returns from payment?",
+    "reference_answer": "The endpoint is POST /api/v1/purchase/checkout/verify-session.",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "explanation, and a pass mark, default 70%). Saving is checked on",
+    "question": "What is the default pass mark for a per-lecture quiz?",
+    "reference_answer": "The default pass mark for a per-lecture quiz is 70%.",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "example.com, password DemoPass123! (throwaway demo accounts).",
+    "question": "What password do the seeded demo accounts use?",
+    "reference_answer": "The demo accounts use the password DemoPass123!.",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "with 3 lectures, each with a drafted 4-question quiz.",
+    "question": "How many lectures does the demo course have, and how many questions are in each lecture's quiz?",
+    "reference_answer": "The demo course has 3 lectures, each with a drafted 4-question quiz.",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "the issuer name \"E-Learning\", and a revocation flag.",
+    "question": "What issuer name is frozen onto every certificate record at the moment of issue?",
+    "reference_answer": "The issuer name recorded on each certificate is \"E-Learning\".",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "Streaks are computed in the Asia/Kolkata timezone from real",
+    "question": "In which timezone are learning streaks on the public skill profile computed?",
+    "reference_answer": "Streaks are computed in the Asia/Kolkata timezone.",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "final warning on the 3rd, and the test auto-submits on the 4th.",
+    "question": "On which flagged event does a proctored test auto-submit?",
+    "reference_answer": "The test auto-submits on the 4th flagged event, after a final warning on the 3rd.",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "10 GB of storage with unlimited free streaming, so new videos can",
+    "question": "How much storage does Cloudflare R2's free tier provide for course videos?",
+    "reference_answer": "Cloudflare R2's free tier provides 10 GB of storage with unlimited free streaming.",
+    "source_doc": "lms.md",
+    "type": "simple"
+  },
+  {
+    "gold_quote": "On Render's free tier the server sleeps when idle, so a\nwebhook arriving at a sleeping server is held up ~50 seconds while it\nwakes — and if Stripe's first delivery times out, retries are spaced\nfar apart.",
+    "question": "Why did the \"Confirming your payment…\" page give up before enrolment completed, even though the webhook endpoint itself was healthy?",
+    "reference_answer": "On Render's free tier the server sleeps when idle, so the webhook was held up about 50 seconds while the server woke, and Stripe's retries are spaced far apart.",
+    "source_doc": "lms.md",
+    "type": "reasoning"
+  },
+  {
+    "gold_quote": "Certificates are issued only from the real\n  per-lecture watched records (plus quiz passes — see below), checked\n  by one shared eligibility function on the server.",
+    "question": "Why does pressing \"Mark as completed\" not earn a student a certificate?",
+    "reference_answer": "Certificates are issued only from the real per-lecture watched records (plus quiz passes), checked by one shared eligibility function on the server, not from the completion marker.",
+    "source_doc": "lms.md",
+    "type": "reasoning"
+  },
+  {
+    "gold_quote": "The student endpoint rebuilds\n  each question without the answer fields, the server scores the\n  submission itself, and only the result includes the correct answers",
+    "question": "How do per-lecture quizzes keep the correct answers hidden from students before they submit?",
+    "reference_answer": "The student endpoint rebuilds each question without the answer fields, the server scores the submission itself, and only the result includes the correct answers.",
+    "source_doc": "lms.md",
+    "type": "reasoning"
+  },
+  {
+    "gold_quote": "Scanning it shows the LIVE status, so even an old\n  printout of a revoked certificate fails verification.",
+    "question": "Why does an old printed certificate fail verification after the certificate has been revoked?",
+    "reference_answer": "The QR code encodes only the verify URL, and scanning it shows the live status, so even an old printout of a revoked certificate fails verification.",
+    "source_doc": "lms.md",
+    "type": "reasoning"
+  },
+  {
+    "gold_quote": "updateProfile and editCourse deleted the old Cloudinary asset\n  BEFORE uploading the new one, and a failed upload threw away all\n  other field edits with a 500.",
+    "question": "Why did the old profile and course update flow throw away a user's other edits when an image upload failed?",
+    "reference_answer": "updateProfile and editCourse deleted the old Cloudinary asset before uploading the new one, and a failed upload threw away all other field edits with a 500.",
+    "source_doc": "lms.md",
+    "type": "reasoning"
+  },
+  {
+    "gold_quote": "(videoDurationSec — if the instructor later replaces the video with\n  a different-length cut, the doubt can be spotted as possibly stale\n  instead of silently pointing at the wrong moment).",
+    "question": "Why does each timestamped doubt store the video's total length at the time the doubt was asked?",
+    "reference_answer": "So that if the instructor later replaces the video with a different-length cut, the doubt can be spotted as possibly stale instead of silently pointing at the wrong moment.",
+    "source_doc": "lms.md",
+    "type": "reasoning"
+  },
+  {
+    "gold_quote": "Certificates are issued only from the real\n  per-lecture watched records (plus quiz passes — see below), checked\n  by one shared eligibility function on the server.",
+    "question": "Which two kinds of records does the server's shared eligibility function rely on when deciding whether to issue a certificate?",
+    "reference_answer": "It relies on the real per-lecture watched records plus quiz passes.",
+    "source_doc": "lms.md",
+    "type": "multihop"
+  },
+  {
+    "gold_quote": "Pushed as 1cd4681 \"add\nverifiable certificates\" (server part needs a Manual Deploy on Render\nto go live — see the deploy note above; the client went live on\nVercel automatically).",
+    "question": "After the verifiable-certificates commit was pushed, what still had to happen before the feature worked live, and which part went live automatically?",
+    "reference_answer": "The server part needed a Manual Deploy on Render to go live, while the client went live on Vercel automatically.",
+    "source_doc": "lms.md",
+    "type": "multihop"
+  },
+  {
+    "gold_quote": "a day counts when a lecture was first watched or a quiz\n  was passed.",
+    "question": "On a student's public skill profile, which two kinds of activity make a day count toward a learning streak?",
+    "reference_answer": "A day counts when a lecture was first watched or a quiz was passed.",
+    "source_doc": "lms.md",
+    "type": "multihop"
+  },
+  {
+    "gold_quote": "",
+    "question": "How much does the \"Demo Course: Web Development Foundations\" cost to buy?",
+    "reference_answer": "Not in the documents",
+    "source_doc": "lms.md",
+    "type": "unanswerable"
+  },
+  {
+    "gold_quote": "",
+    "question": "How many students are currently enrolled across all courses on the platform?",
+    "reference_answer": "Not in the documents",
+    "source_doc": "lms.md",
+    "type": "unanswerable"
+  },
+  {
+    "gold_quote": "",
+    "question": "Does the LMS offer a native Android or iOS app for students?",
+    "reference_answer": "Not in the documents",
+    "source_doc": "lms.md",
+    "type": "unanswerable"
+  }
+]

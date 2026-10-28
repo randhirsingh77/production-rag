@@ -1,0 +1,177 @@
+[
+ {
+  "gold_quote": "**Live site:** https://randhirsingh77.github.io/Food-Delivery/",
+  "question": "What is the live URL of the Foodie website?",
+  "reference_answer": "The live site is at https://randhirsingh77.github.io/Food-Delivery/.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "discount first (promo **FOODIE50**: 50% off, capped at ₹100, only when subtotal ≥ ₹299)",
+  "question": "What discount does the FOODIE50 promo give, and when does it apply?",
+  "reference_answer": "FOODIE50 gives 50% off, capped at ₹100, and it applies only when the subtotal is at least ₹299.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "then delivery (₹30, **free when subtotal − discount ≥ ₹499**)",
+  "question": "How much is the delivery fee, and when is delivery free?",
+  "reference_answer": "Delivery costs ₹30, and it is free when the subtotal minus discount is ₹499 or more.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "JavaScript checks the hour against the 11:00–23:00 opening hours and renders a green \"Open now\" or red \"Closed · opens 11 AM\".",
+  "question": "What are the restaurant's opening hours shown on the site?",
+  "reference_answer": "The opening hours are 11:00–23:00; the badge shows \"Open now\" in green or \"Closed · opens 11 AM\" in red.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "A tampered request claiming Pasta costs ₹1 still saves at ₹250 (tested).",
+  "question": "What is the server-side price of Pasta?",
+  "reference_answer": "Pasta costs ₹250 in the server's own price list.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "assigned driver: →on_the_way→delivered, delivery credits the driver ₹40 demo pay",
+  "question": "How much demo pay does a driver earn for one completed delivery?",
+  "reference_answer": "The driver is credited ₹40 demo pay when an order is delivered.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "(Auth0 free plan: 25,000 monthly active users, unlimited social logins — verified against Auth0's pricing/docs.)",
+  "question": "How many monthly active users does the Auth0 free plan allow?",
+  "reference_answer": "The Auth0 free plan allows 25,000 monthly active users, with unlimited social logins.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "Examples: pasta.jpg 4.4 MB → 78 KB, pizza.jpg 3.8 MB → 197 KB.",
+  "question": "What size did pasta.jpg shrink to after image compression?",
+  "reference_answer": "pasta.jpg was compressed from 4.4 MB to 78 KB.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "Service URL: https://foodie-server-kwl6.onrender.com",
+  "question": "What is the URL of the live foodie-server backend?",
+  "reference_answer": "The live backend service URL is https://foodie-server-kwl6.onrender.com.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "Weekly plan: 6 thali meals, ₹699 over 7 days.",
+  "question": "What does the weekly tiffin plan include, and what does it cost?",
+  "reference_answer": "The weekly plan gives 6 thali meals for ₹699 over 7 days.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "Monthly: 24 meals,\n₹2,499 over 4 weeks.",
+  "question": "What does the monthly tiffin plan include, and what does it cost?",
+  "reference_answer": "The monthly plan gives 24 meals for ₹2,499 over 4 weeks.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "**Ghar Jaisa Thali, ₹130** — 4 rotis,\ndal, seasonal sabzi, rice, salad, made without onion-garlic",
+  "question": "What is the price of the Ghar Jaisa Thali, and what does it contain?",
+  "reference_answer": "The Ghar Jaisa Thali costs ₹130 and contains 4 rotis, dal, seasonal sabzi, rice and salad, made without onion-garlic.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "pings the backend's `/health` every 14 minutes — one minute before Render's 15-minute idle limit",
+  "question": "How often does the keep-alive service ping the backend?",
+  "reference_answer": "It pings the backend's /health every 14 minutes, one minute before Render's 15-minute idle limit.",
+  "source_doc": "food-delivery.md",
+  "type": "simple"
+ },
+ {
+  "gold_quote": "there is no free SMS OTP anywhere in the world — every text message is billed to someone. So the design uses the standard free alternative: **the phone number is the username.**",
+  "question": "Why does Foodie's login use the phone number as a username instead of sending an SMS OTP?",
+  "reference_answer": "Because every text message is billed to someone, there is no free SMS OTP, so the design uses the phone number itself as the username instead.",
+  "source_doc": "food-delivery.md",
+  "type": "reasoning"
+ },
+ {
+  "gold_quote": "But `.nav` inside the header has `min-height: var(--header-h)`, and `offsetHeight` includes the header's own 1px bottom border. So each write made the header exactly 1px taller, the ResizeObserver fired again, wrote the bigger value back — +1px per cycle, forever.",
+  "question": "Why did the fixed header keep growing taller on its own?",
+  "reference_answer": "The measured header height included its own 1px bottom border, and that height was written back into the variable the header's min-height used, so each write made it 1px taller and the ResizeObserver repeated the cycle forever.",
+  "source_doc": "food-delivery.md",
+  "type": "reasoning"
+ },
+ {
+  "gold_quote": "Each card carries `data-name` and `data-price` attributes. On load, JavaScript reads all cards into a `Map` (name → price). Every feature reads from that one map, so prices can never disagree between the menu, the cart and the order form.",
+  "question": "How does the site make sure prices can never disagree between the menu, the cart and the order form?",
+  "reference_answer": "Each dish card carries data-name and data-price attributes, JavaScript reads them into one Map of name to price, and every feature reads prices from that single map.",
+  "source_doc": "food-delivery.md",
+  "type": "reasoning"
+ },
+ {
+  "gold_quote": "**Server recomputes every amount** from its own price list; browser totals are ignored. A tampered request claiming Pasta costs ₹1 still saves at ₹250 (tested).",
+  "question": "What happens if a customer tampers with the browser request to claim Pasta costs ₹1?",
+  "reference_answer": "The order still saves at ₹250, because the server recomputes every amount from its own price list and ignores the totals sent by the browser.",
+  "source_doc": "food-delivery.md",
+  "type": "reasoning"
+ },
+ {
+  "gold_quote": "Jain is NOT just \"no\nonion-garlic\" — Jain food also excludes root vegetables, so the flags\nare declared one by one per dish, never calculated from the veg flag.",
+  "question": "Why are the Jain dietary flags declared one by one for each dish instead of being calculated from other flags?",
+  "reference_answer": "Jain food is not just no onion-garlic, because it also excludes root vegetables, so each dish's flags are declared one by one and never calculated from the veg flag.",
+  "source_doc": "food-delivery.md",
+  "type": "reasoning"
+ },
+ {
+  "gold_quote": "The split is worked out in integer PAISE, never decimal\nrupees: each person pays for their own dishes plus a share of\ndelivery/discount in proportion to their dishes, using\nlargest-remainder allocation so the shares always add up to the exact\ntotal",
+  "question": "How does the group-order bill split guarantee that everyone's shares add up to the exact total?",
+  "reference_answer": "The split is worked out in integer paise instead of decimal rupees, and largest-remainder allocation is used so the shares always add up to the exact total.",
+  "source_doc": "food-delivery.md",
+  "type": "reasoning"
+ },
+ {
+  "gold_quote": "the order (Pasta ×3 + Biryani ×2, FOODIE50, total ₹1,010) went received → kitchen → driver → **delivered**; the driver was credited **₹40** and carries a **5-star rating, count 1**.",
+  "question": "In the full live test, what was the total of the order that went through the kitchen and driver to delivery, and what did the driver end up with?",
+  "reference_answer": "The order of Pasta ×3 + Biryani ×2 with FOODIE50 totalled ₹1,010 and was delivered; the driver was credited ₹40 and carries a 5-star rating with count 1.",
+  "source_doc": "food-delivery.md",
+  "type": "multihop"
+ },
+ {
+  "gold_quote": "Google OAuth2 redirect flow (needs GOOGLE_CLIENT_ID/SECRET env — until set, `/auth/google` answers 503 \"not configured\" and the callback returns the browser to SITE_URL with the JWT in the URL hash)",
+  "question": "Why does \"Continue with Google\" fail on the live site, and what is needed to make it work?",
+  "reference_answer": "The Google flow needs GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET set in the backend's environment; until they are set, /auth/google answers 503 \"not configured\".",
+  "source_doc": "food-delivery.md",
+  "type": "multihop"
+ },
+ {
+  "gold_quote": "That single\nstep switches on both daily jobs (tiffin deliveries at 06:00 IST, demo\nreset at 03:30 IST) and makes the live demo accounts appear.",
+  "question": "Which two daily jobs start working once the owner places the ADMIN_KEY file on the machine, and at what times do they run?",
+  "reference_answer": "Placing the ADMIN_KEY file switches on the tiffin deliveries at 06:00 IST and the demo reset at 03:30 IST.",
+  "source_doc": "food-delivery.md",
+  "type": "multihop"
+ },
+ {
+  "gold_quote": "",
+  "question": "What is the price of the Chocolate Drink on the menu?",
+  "reference_answer": "Not in the documents",
+  "source_doc": "food-delivery.md",
+  "type": "unanswerable"
+ },
+ {
+  "gold_quote": "",
+  "question": "How many registered users does Foodie have in total?",
+  "reference_answer": "Not in the documents",
+  "source_doc": "food-delivery.md",
+  "type": "unanswerable"
+ },
+ {
+  "gold_quote": "",
+  "question": "Which payment gateway does Foodie use to process debit and credit card payments?",
+  "reference_answer": "Not in the documents",
+  "source_doc": "food-delivery.md",
+  "type": "unanswerable"
+ }
+]

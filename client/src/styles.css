@@ -1,0 +1,78 @@
+:root {
+  --ink: #17203a;
+  --muted: #5b6478;
+  --line: #dfe3ec;
+  --bg: #f6f7fa;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --good: #15803d;
+  --warn: #b45309;
+  --bad: #b91c1c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+main { max-width: 920px; margin: 0 auto; padding: 24px 16px 48px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+h1 { font-size: 22px; margin: 0; letter-spacing: -0.01em; }
+h2 { font-size: 16px; margin: 0 0 6px; }
+nav button {
+  border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  padding: 7px 14px; border-radius: 999px; cursor: pointer; font-size: 14px;
+}
+nav button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+nav { display: flex; gap: 8px; }
+.panel {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 18px; margin-top: 16px;
+}
+.sub { color: var(--muted); font-size: 13.5px; margin: 4px 0 12px; }
+.askrow { display: flex; gap: 8px; }
+.askrow input {
+  flex: 1; padding: 11px 13px; border: 1px solid var(--line); border-radius: 10px; font-size: 15px;
+}
+.askrow button {
+  padding: 11px 18px; border: 0; border-radius: 10px; background: var(--accent);
+  color: #fff; font-size: 15px; cursor: pointer;
+}
+.askrow button:disabled { opacity: 0.6; }
+.answer { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 14px; font-size: 15.5px; line-height: 1.55; }
+.answer .refused { color: var(--warn); font-weight: 600; }
+.cites { list-style: none; padding: 0; margin: 10px 0; font-size: 13px; color: var(--muted); }
+.cites .ref { color: var(--accent); font-weight: 700; }
+.stages { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-top: 10px; }
+.chip { background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; font-size: 12px; color: var(--muted); }
+.vote { margin-left: auto; display: flex; gap: 4px; }
+.vote button { border: 1px solid var(--line); background: var(--card); border-radius: 8px; cursor: pointer; padding: 4px 8px; }
+.err { color: var(--bad); font-size: 14px; }
+.strip { display: flex; gap: 10px; flex-wrap: wrap; }
+.stage { flex: 1 1 110px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: var(--bg); }
+.stage.total { background: var(--ink); color: #fff; }
+.stage-name { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.stage.total .stage-name, .stage.total .stage-sub { color: #c7cede; }
+.stage-val { font-size: 20px; font-weight: 700; margin: 2px 0; }
+.stage-sub { font-size: 12px; color: var(--muted); }
+.scores { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+.score { flex: 1 1 120px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; }
+.score span { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.score strong { font-size: 22px; }
+.chart { width: 100%; height: auto; margin-top: 8px; }
+.chart .grid { stroke: var(--line); stroke-width: 1; }
+.chart .l-recall { stroke: var(--accent); }
+.chart .l-faith { stroke: var(--good); }
+.chart .l-ground { stroke: var(--warn); }
+.legend { font-size: 12.5px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; margin-left: 10px; }
+.d-recall { background: var(--accent); } .d-faith { background: var(--good); } .d-ground { background: var(--warn); }
+.fails { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.fails th, .fails td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.badge { border-radius: 999px; padding: 2px 9px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.b-low_recall { background: #fef3c7; color: var(--warn); }
+.b-hallucination { background: #fee2e2; color: var(--bad); }
+.b-packing { background: #e0e7ff; color: var(--accent); }
+.b-stale { background: #ede9fe; color: #6d28d9; }
+footer { margin-top: 22px; color: var(--muted); font-size: 13px; text-align: center; }

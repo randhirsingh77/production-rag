@@ -1,0 +1,238 @@
+{
+  "generatedAt": "2026-10-28T21:21:21.467Z",
+  "mode": "demo (dev embedder + extractive answers)",
+  "rows": [
+    {
+      "config": "dense-only, chunks ~420t",
+      "chunks": 119,
+      "recallAt10": 0.6931818181818182,
+      "abstention": 0.8333333333333334,
+      "groundedness": 0.666666666666667,
+      "failures": 24,
+      "p95Ms": 68
+    },
+    {
+      "config": "bm25-only, chunks ~420t",
+      "chunks": 119,
+      "recallAt10": 0.17045454545454544,
+      "abstention": 1,
+      "groundedness": 0.10784313725490194,
+      "failures": 65,
+      "p95Ms": 4
+    },
+    {
+      "config": "hybrid RRF, chunks ~420t",
+      "chunks": 119,
+      "recallAt10": 0.7045454545454546,
+      "abstention": 0.8333333333333334,
+      "groundedness": 0.666666666666667,
+      "failures": 22,
+      "p95Ms": 59
+    },
+    {
+      "config": "hybrid RRF, chunks ~300t",
+      "chunks": 153,
+      "recallAt10": 0.7159090909090909,
+      "abstention": 0.8333333333333334,
+      "groundedness": 0.6711711711711714,
+      "failures": 22,
+      "p95Ms": 73
+    }
+  ],
+  "samples": [
+    {
+      "question": "What does the Monthly tiffin plan cost and how many meals does it include?",
+      "answer": "Not in the documents.",
+      "refused": true,
+      "citations": [],
+      "stages": [
+        {
+          "stage": "retrieve",
+          "latencyMs": 41
+        },
+        {
+          "stage": "pack",
+          "latencyMs": 0
+        },
+        {
+          "stage": "generate",
+          "latencyMs": 0
+        }
+      ]
+    },
+    {
+      "question": "How much does a delivery driver earn per completed delivery on Foodie?",
+      "answer": "Not in the documents.",
+      "refused": true,
+      "citations": [],
+      "stages": [
+        {
+          "stage": "retrieve",
+          "latencyMs": 47
+        },
+        {
+          "stage": "pack",
+          "latencyMs": 0
+        },
+        {
+          "stage": "generate",
+          "latencyMs": 0
+        }
+      ]
+    },
+    {
+      "question": "What is the default pass mark for quizzes in the LMS?",
+      "answer": "How it was built: - The instructor authors a quiz inside the lecture edit screen   (questions, 2–6 options each, the correct option, an optional   explanation, and a pass mark, default 70%). [S1] | 0.96 (25/26) | | hybrid + rerank | not measurable in the sandbox — the reranker model could not be installed here (same torch download limit as Round 1); the code path is unit-tested with a stub reranker and will run for real on the PC | Read the tie honestly: in this sandbox the \"vector\" leg runs on the lexical fallback embedder (no torch), so both legs are word-based and a tie is expected. [S2] Teachers can now schedule live video sessions for a course, and enrolled students join from inside the LMS. [S3]",
+      "refused": false,
+      "citations": [
+        {
+          "ref": "S1",
+          "chunkId": "lms:021",
+          "doc": "lms",
+          "section": "LMS — Course Selling Platform > LMS — project document > Per-lecture quizzes (2026-10-26)"
+        },
+        {
+          "ref": "S2",
+          "chunkId": "personal-ai:022",
+          "doc": "personal-ai",
+          "section": "Personal AI — Voice Assistant > Personal AI — project doc > Round 2 — three research-picked additions (2026-10-27) > 3. Ask-my-notes v2 — hybrid search, reranking, and honest numbers"
+        },
+        {
+          "ref": "S3",
+          "chunkId": "lms:031",
+          "doc": "lms",
+          "section": "LMS — Course Selling Platform > LMS — project document > Live sessions — video classes inside the LMS (2026-10-27)"
+        },
+        {
+          "ref": "S4",
+          "chunkId": "lms:014",
+          "doc": "lms",
+          "section": "LMS — Course Selling Platform > LMS — project document > Verifiable certificates (2026-10-26)"
+        },
+        {
+          "ref": "S5",
+          "chunkId": "lms:009",
+          "doc": "lms",
+          "section": "LMS — Course Selling Platform > LMS — project document > Payment confirmation fix — verify-on-return (2026-10-26)"
+        },
+        {
+          "ref": "S6",
+          "chunkId": "foodie:002",
+          "doc": "foodie",
+          "section": "Foodie — Food Delivery Platform > Foodie — Food Delivery Website · Project Document > 1. The audit — how the problems were found (23 Oct 2026)"
+        }
+      ],
+      "stages": [
+        {
+          "stage": "retrieve",
+          "latencyMs": 41
+        },
+        {
+          "stage": "pack",
+          "latencyMs": 0
+        },
+        {
+          "stage": "generate",
+          "latencyMs": 0
+        }
+      ]
+    },
+    {
+      "question": "How many tools does the personal AI assistant have in its registry?",
+      "answer": "Not in the documents.",
+      "refused": true,
+      "citations": [],
+      "stages": [
+        {
+          "stage": "retrieve",
+          "latencyMs": 50
+        },
+        {
+          "stage": "pack",
+          "latencyMs": 0
+        },
+        {
+          "stage": "generate",
+          "latencyMs": 0
+        }
+      ]
+    },
+    {
+      "question": "What accent colour does the portfolio use?",
+      "answer": "The site's login page has three \"Demo:\" buttons, and a link like `?demo=driver` signs straight into that role — that is what the portfolio's demo buttons will point at. [S1] exists, so loading it on a page without the form (like a case study) would have thrown an error and killed the rest of the script. [S2] On the PC the vector leg becomes true semantic search (MiniLM), which is the combination the research measured as strictly better on larger corpora — and the one question both configurations missed here (\"how long does the mango pickle need to rest?\" — the note says \"let it rest\") is exactly the paraphrase kind a semantic embedder + reranker is built to catch. [S3]",
+      "refused": false,
+      "citations": [
+        {
+          "ref": "S1",
+          "chunkId": "foodie:075",
+          "doc": "foodie",
+          "section": "Foodie — Food Delivery Platform > Foodie — Food Delivery Website · Project Document > 24. Differentiator features — dietary data, queue ETA, group orders, tiffin plans, demo login (2026-10-26) > 24.5 One-click demo accounts"
+        },
+        {
+          "ref": "S2",
+          "chunkId": "portfolio:009",
+          "doc": "portfolio",
+          "section": "Portfolio — Personal Website and Ask Randhir > Portfolio Website · Project Document > 7. Case studies, demo buttons and activity snapshot (26 Oct 2026)"
+        },
+        {
+          "ref": "S3",
+          "chunkId": "personal-ai:022",
+          "doc": "personal-ai",
+          "section": "Personal AI — Voice Assistant > Personal AI — project doc > Round 2 — three research-picked additions (2026-10-27) > 3. Ask-my-notes v2 — hybrid search, reranking, and honest numbers"
+        },
+        {
+          "ref": "S4",
+          "chunkId": "portfolio:011",
+          "doc": "portfolio",
+          "section": "Portfolio — Personal Website and Ask Randhir > Portfolio Website · Project Document > 7. Case studies, demo buttons and activity snapshot (26 Oct 2026)"
+        },
+        {
+          "ref": "S5",
+          "chunkId": "lms:021",
+          "doc": "lms",
+          "section": "LMS — Course Selling Platform > LMS — project document > Per-lecture quizzes (2026-10-26)"
+        },
+        {
+          "ref": "S6",
+          "chunkId": "foodie:004",
+          "doc": "foodie",
+          "section": "Foodie — Food Delivery Platform > Foodie — Food Delivery Website · Project Document > 3. Making everything work (script.js)"
+        }
+      ],
+      "stages": [
+        {
+          "stage": "retrieve",
+          "latencyMs": 41
+        },
+        {
+          "stage": "pack",
+          "latencyMs": 0
+        },
+        {
+          "stage": "generate",
+          "latencyMs": 1
+        }
+      ]
+    },
+    {
+      "question": "What is the LMS platform's refund policy for annual plans?",
+      "answer": "Not in the documents.",
+      "refused": true,
+      "citations": [],
+      "stages": [
+        {
+          "stage": "retrieve",
+          "latencyMs": 51
+        },
+        {
+          "stage": "pack",
+          "latencyMs": 0
+        },
+        {
+          "stage": "generate",
+          "latencyMs": 0
+        }
+      ]
+    }
+  ]
+}
