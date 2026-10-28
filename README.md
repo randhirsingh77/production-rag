@@ -1,8 +1,8 @@
 # Production RAG
 
-A retrieval-augmented generation system over a small documentation corpus, built to
-production standards: every pipeline stage is measured on its own, every answer is
-traced, and a nightly evaluation run gates changes.
+I built this retrieval-augmented generation system over my own project
+documentation, to production standards: every pipeline stage is measured on its
+own, every answer is traced, and a nightly evaluation run gates changes.
 
 **Live quality numbers are produced by the system itself** — Recall@10, faithfulness,
 groundedness, abstention accuracy, per-stage latency — and shown on its dashboard.
