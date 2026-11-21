@@ -44,6 +44,16 @@ cd client && npm install && npm run dev   # UI on :5173
 Without `GEMINI_API_KEY` the system runs in a clearly-labelled dev mode: a
 deterministic offline embedder, retrieval-only eval, refusal path fully active.
 
+## Configuration
+
+I keep the rest of the server settings in `server/.env.example`, and three are worth knowing up front:
+
+| Setting | Default | What it does |
+| --- | --- | --- |
+| `CORPUS_DIR` | `<repo root>/corpus` | Where the markdown corpus lives — the docs I ingest and answer from. |
+| `EVAL_SET` | `<repo root>/eval/golden_core_100.jsonl` | The golden question set the eval harness scores against. |
+| `EVIDENCE_MIN_DENSE` | `0.3` | Minimum best dense cosine score for the evidence gate to attempt an answer when no rerank score exists — a starting value, calibrated later on the golden set's unanswerable slice. |
+
 ## Evaluate
 
 ```bash
