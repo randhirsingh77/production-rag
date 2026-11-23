@@ -46,19 +46,25 @@ deterministic offline embedder, retrieval-only eval, refusal path fully active.
 
 ## Configuration
 
-I keep the rest of the server settings in `server/.env.example`, and three are worth knowing up front:
+I keep the rest of the server settings in `server/.env.example`, and these are worth knowing up front:
 
 | Setting | Default | What it does |
 | --- | --- | --- |
 | `CORPUS_DIR` | `<repo root>/corpus` | Where the markdown corpus lives — the docs I ingest and answer from. |
 | `EVAL_SET` | `<repo root>/eval/golden_core_100.jsonl` | The golden question set the eval harness scores against. |
-| `EVIDENCE_MIN_DENSE` | `0.3` | Minimum best dense cosine score for the evidence gate to attempt an answer when no rerank score exists — a starting value, calibrated later on the golden set's unanswerable slice. |
+| `EVIDENCE_MIN_DENSE` | `0.3` | Minimum best dense cosine score for the evidence gate to attempt an answer when no rerank score exists — a
+starting value, calibrated later on the golden set's unanswerable slice. |
+| `EMBED_MODEL` | `gemini-embedding-001` | The Gemini model I embed with — a free-tier default, so I leave it unset. |
+| `EMBED_DIM` | `768` | The embedding size the model produces. |
+| `GEN_MODEL` | `gemini-2.5-flash` | The Gemini model that writes the grounded answers. |
+| `JUDGE_MODEL` | `gemini-2.5-flash` | The Gemini model that judges faithfulness in the nightly eval. |
+| `ADMIN_TOKEN` | _(unset)_ | The token my admin endpoints require — I set it in `.env` and keep it secret. |
 
 ## Evaluate
 
-```bash
+```
 cd server
-npm run eval            # full core set
+npm run eval           # full core set
 npm run eval -- --smoke # 25-question smoke subset
 npm test                # unit tests
 ```
@@ -68,11 +74,11 @@ npm test                # unit tests
 ```
 server/src/
   ingest/        parser, structural chunker, contextual prefixes, ingest pipeline
-  retrieval/     hybrid search (dense + BM25 + RRF), rerank, context packing
+  retrieval/    hybrid search (dense + BM25 + RRFq, rerank, context packing
   generation/    grounded prompt, citation verifier, evidence gate (refusal)
   eval/          golden-set runner, scoring, LLM judge, failure miner
   observability/ traces, spans, dashboard metrics
-  api/           Express app and the ask pipeline
-client/          ask-box + quality dashboard
+  api/          Express app and the ask pipeline
+client/           ask-box + quality dashboard
 eval/            golden set (JSONL + notes)
 ```
